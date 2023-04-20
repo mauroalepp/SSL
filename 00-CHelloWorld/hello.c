@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define SIZE_STR 30 
 
 
 int imprimir (char *hello) {
@@ -24,7 +25,7 @@ int escribirArchivo (char *hello, char *nombreArchivo, FILE *af){
 }
 
 int verificarArchivo (char *hello, char *nombreArchivo, FILE *af){
-    char verificacion[30] = "";
+    char verificacion[SIZE_STR] = "";
     char buffer=(long)"";
     af = fopen(nombreArchivo, "r");
     
@@ -50,8 +51,8 @@ int verificarArchivo (char *hello, char *nombreArchivo, FILE *af){
 
 int main(int argc, char* argv[]){
     FILE *af = NULL;
-    char hello[30] = "Hello, World!";
-    char nombreArchivo[30] = "output.txt";
+    char hello[SIZE_STR] = "Hello, World!";
+    char nombreArchivo[SIZE_STR] = "output.txt";
     imprimir (hello);
     escribirArchivo(hello, nombreArchivo, af);
     verificarArchivo(hello, nombreArchivo, af);
